@@ -149,9 +149,10 @@ class _HomeState extends State<Home> {
         ),
         centerTitle: true,
       ),
-      body: Container(
-        color: Colors.white,
-        child: Center(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Container(
+          color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -164,17 +165,26 @@ class _HomeState extends State<Home> {
                   );
                 },
                 child: Container(
-                    margin: EdgeInsets.all(40.0),
-                    color: Colors.black,
-                    height: 300,
-                    width: 500,
+                    padding: EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                        color: Colors.black12,
+                        borderRadius: BorderRadius.circular(20.0)),
+                    margin: EdgeInsets.all(20.0),
+                    height: 260,
                     child: Stack(
                       children: [
                         Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset("images/cartaoBlack.jpg"),
+                            Image.asset(
+                              "images/cartaoBlack.jpg",
+                              scale: 2.5,
+                            ),
                             Text(
                               "Ir para a tela com lista",
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 25.0),
                             ),
                           ],
                         ),
@@ -189,16 +199,31 @@ class _HomeState extends State<Home> {
                   );
                 },
                 child: Container(
-                  margin: EdgeInsets.all(40.0),
-                  color: Colors.red,
-                  height: MediaQuery.of(context).size.height / 5,
-                  width: MediaQuery.of(context).size.width / 5,
-                  child: Column(
-                    children: [
-                      Text("Ir para a tela com Grid"),
-                    ],
-                  ),
-                ),
+                    padding: EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                        color: Colors.red[200],
+                        borderRadius: BorderRadius.circular(20.0)),
+                    margin: EdgeInsets.all(20.0),
+                    height: 260,
+                    child: Stack(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "images/cartaoRed.jpg",
+                              scale: 1.8,
+                            ),
+                            Text(
+                              "Ir para a tela com lista",
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 25.0),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )),
               ),
             ],
           ),

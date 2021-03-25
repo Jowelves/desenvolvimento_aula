@@ -10,6 +10,13 @@ class Lista extends StatefulWidget {
 class _ListaState extends State<Lista> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tela com as listas'),
+      ),
+      body: Container(
+        color: Colors.green[100],
+      ),
+    );
   }
 }
