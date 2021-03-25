@@ -55,17 +55,19 @@ class _LoginState extends State<Login> {
               ],
             )),
         body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           color: Colors.red,
-          padding: EdgeInsets.only(bottom: 140.0, left: 140.0, right: 140.0),
           child: SingleChildScrollView(
               child: Form(
             key: formkey,
             child: Container(
+              margin: EdgeInsets.only(left: 60.0, right: 60.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20.0),
-                      bottomRight: Radius.circular(20.0))),
+                      bottomRight: Radius.circular(40.0))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
@@ -82,7 +84,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 140.0, right: 140.0),
+                    padding: EdgeInsets.only(left: 40.0, right: 40.0),
                     child: Column(
                       children: [
                         TextFormField(

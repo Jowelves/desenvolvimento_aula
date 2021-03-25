@@ -66,6 +66,9 @@ class _HomeState extends State<Home> {
                               fontSize: 25.0,
                               color: Colors.white,
                             ))),
+                    Divider(
+                      color: Colors.black,
+                    ),
                     SizedBox(
                       height: 10.0,
                     ),
@@ -77,7 +80,7 @@ class _HomeState extends State<Home> {
                           );
                         },
                         icon: Icon(
-                          Icons.home,
+                          Icons.library_books,
                           size: 30.0,
                           color: Colors.white,
                         ),
@@ -86,6 +89,9 @@ class _HomeState extends State<Home> {
                               fontSize: 25.0,
                               color: Colors.white,
                             ))),
+                    Divider(
+                      color: Colors.black,
+                    ),
                     SizedBox(
                       height: 10.0,
                     ),
@@ -97,7 +103,7 @@ class _HomeState extends State<Home> {
                           );
                         },
                         icon: Icon(
-                          Icons.home,
+                          Icons.calculate,
                           size: 30.0,
                           color: Colors.white,
                         ),
@@ -106,6 +112,9 @@ class _HomeState extends State<Home> {
                               fontSize: 25.0,
                               color: Colors.white,
                             ))),
+                    Divider(
+                      color: Colors.black,
+                    ),
                     SizedBox(
                       height: 250.0,
                     ),
@@ -122,7 +131,7 @@ class _HomeState extends State<Home> {
                             size: 40.0, color: Colors.red),
                         label: Text(
                           "Sair",
-                          style: TextStyle(fontSize: 30.0),
+                          style: TextStyle(fontSize: 25.0),
                         )),
                   ],
                 ),
@@ -141,9 +150,57 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       body: Container(
+        color: Colors.white,
         child: Center(
-          child: Column(
-            children: [],
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Lista()),
+                  );
+                },
+                child: Container(
+                    margin: EdgeInsets.all(40.0),
+                    color: Colors.black,
+                    height: 300,
+                    width: 500,
+                    child: Stack(
+                      children: [
+                        Column(
+                          children: [
+                            Image.asset("images/cartaoBlack.jpg"),
+                            Text(
+                              "Ir para a tela com lista",
+                            ),
+                          ],
+                        ),
+                      ],
+                    )),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Grid()),
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.all(40.0),
+                  color: Colors.red,
+                  height: MediaQuery.of(context).size.height / 5,
+                  width: MediaQuery.of(context).size.width / 5,
+                  child: Column(
+                    children: [
+                      Text("Ir para a tela com Grid"),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
