@@ -143,11 +143,29 @@ class _HomeState extends State<Home> {
       //////////////////////////////////
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text(
-          "Tela home com drawer",
-          style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+        title: Stack(
+          children: [
+            SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Tela home com drawer",
+                      style: TextStyle(
+                          fontSize: 30.0, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 40.0,
+                    ),
+                    Image.asset(
+                      "images/LogoBrancoSantander.jpg",
+                      scale: 3.5,
+                    ),
+                  ],
+                )),
+          ],
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,

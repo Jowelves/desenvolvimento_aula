@@ -33,26 +33,28 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
             foregroundColor: Colors.black,
             backgroundColor: Colors.white,
-            title: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  'Login Banco',
-                  style: TextStyle(color: Colors.red),
-                ),
-                Image.asset(
-                  "images/SantanderLogo.png",
-                  fit: BoxFit.cover,
-                  height: 150.0,
-                ),
-                IconButton(
-                  icon: Icon(Icons.refresh, color: Colors.red),
-                  onPressed: () {
-                    reset();
-                  },
-                )
-              ],
+            title: Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    'Login Banco',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  Image.asset(
+                    "images/SantanderLogo.png",
+                    fit: BoxFit.cover,
+                    scale: 3.0,
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.refresh, color: Colors.red),
+                    onPressed: () {
+                      reset();
+                    },
+                  )
+                ],
+              ),
             )),
         body: Container(
           height: MediaQuery.of(context).size.height,

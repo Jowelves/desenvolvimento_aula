@@ -13,8 +13,18 @@ class _GridState extends State<Grid> {
         title: Text("tela de grid"),
         centerTitle: true,
       ),
-      body: Container(
-        child: null,
+      body: GridView.count(
+        // Cria um grid com duas colunas
+        crossAxisCount: 2,
+        // Gera 100 Widgets que exibem o seu índice
+        children: List.generate(10, (index) {
+          return Center(
+            child: Text(
+              'Item $index',
+              style: Theme.of(context).textTheme.headline,
+            ),
+          );
+        }),
       ),
     );
   }
