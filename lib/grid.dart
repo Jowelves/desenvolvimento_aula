@@ -21,6 +21,7 @@ class _GridState extends State<Grid> {
           return Center(
             child: Text(
               'Item $index',
+              // ignore: deprecated_member_use
               style: Theme.of(context).textTheme.headline,
             ),
           );
