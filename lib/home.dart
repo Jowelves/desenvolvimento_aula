@@ -1,6 +1,6 @@
 import 'package:desenvolvimento_aula/grid.dart';
-import 'package:desenvolvimento_aula/lista.dart';
 import 'package:desenvolvimento_aula/login.dart';
+import 'package:desenvolvimento_aula/tela_lista.dart';
 import 'package:flutter/material.dart';
 
 ///draw no appbar circol avatar icone ou image
@@ -76,7 +76,8 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Lista()),
+                            MaterialPageRoute(
+                                builder: (context) => TelaLista()),
                           );
                         },
                         icon: Icon(
@@ -121,6 +122,10 @@ class _HomeState extends State<Home> {
 
                     ///botao sair
                     ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.red,
+                            primary: Colors.white,
+                            onPrimary: Colors.white),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -131,7 +136,10 @@ class _HomeState extends State<Home> {
                             size: 40.0, color: Colors.red),
                         label: Text(
                           "Sair",
-                          style: TextStyle(fontSize: 25.0),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0,
+                              color: Colors.red),
                         )),
                   ],
                 ),
@@ -179,7 +187,7 @@ class _HomeState extends State<Home> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Lista()),
+                    MaterialPageRoute(builder: (context) => TelaLista()),
                   );
                 },
                 child: Container(
