@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 class TelaLista extends StatefulWidget {
   @override
@@ -9,12 +6,13 @@ class TelaLista extends StatefulWidget {
 }
 
 class _TelaListaState extends State<TelaLista> {
-  void _recuperarPreco() async {
-    var url = Uri.parse(
-        'https://blockchain.info/ticker'); //convert a string para o tipo Uri
-    http.Response response = await http.get(url);
-    Map<String, dynamic> retorno = json.decode(response.body);
-    print("Resultado" + retorno["BRL"]);
+  final _textoControle = TextEditingController();
+  int itens = 0;
+
+  void _addLista() {
+    setState(() {
+      itens = int.parse(_textoControle.text);
+    });
   }
 
   @override
@@ -27,30 +25,40 @@ class _TelaListaState extends State<TelaLista> {
         ),
         centerTitle: true,
         backgroundColor: Colors.black,
-        actions: [
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () => _recuperarPreco(),
-                child: Icon(
-                  Icons.update,
-                  size: 25.0,
-                ),
-              ),
-              Text("Atualizar")
-            ],
-          )
-        ],
       ),
-      body: Container(
-        color: Colors.amber,
-        child: SingleChildScrollView(
-            /*  child: ListView.builder(
-            itemCount: ,
-           itemBuilder: ,
-           
-          ), */
+      body: Column(
+        children: [
+          Container(
+            color: Colors.black26,
+            padding: EdgeInsets.fromLTRB(20.0, 10.0, 7.0, 5.0),
+            child: Column(
+              children: [
+                TextField(
+                  keyboardType: TextInputType.number,
+                  controller: _textoControle,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0))),
+                ),
+                ElevatedButton.icon(
+                    onPressed: _addLista,
+                    icon: Icon(Icons.add),
+                    label: Text("Quantidade de Itens da lista")),
+              ],
             ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.only(top: 10.0),
+              itemCount: itens,
+              itemBuilder: (contex, index) {
+                return ListTile(
+                  title: Text("Item nº: $index"),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
