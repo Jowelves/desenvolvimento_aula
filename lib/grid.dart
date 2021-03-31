@@ -15,14 +15,12 @@ class _GridState extends State<Grid> {
       ),
       body: GridView.count(
         // Cria um grid com duas colunas
-        crossAxisCount: 2,
+        crossAxisCount: 4,
         // Gera 100 Widgets que exibem o seu índice
-        children: List.generate(10, (index) {
+        children: List.generate(100, (index) {
           return Center(
             child: Text(
               'Item $index',
-              // ignore: deprecated_member_use
-              style: Theme.of(context).textTheme.headline,
             ),
           );
         }),

@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CircleAvatar(
-                      backgroundColor: Colors.black45,
+                      backgroundColor: Colors.red[400],
                       radius: 80.0,
                       child: Icon(
                         Icons.person,
